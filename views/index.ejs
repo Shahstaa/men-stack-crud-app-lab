@@ -1,13 +1,25 @@
-<h1>Book List</h1>
-<a href="/books/new">Add New Book</a>
-<ul>
-  <% books.forEach(book => { %>
-    <li>
-      <a href="/books/<%= book._id %>"><%= book.title %></a>
-      <a href="/books/<%= book._id %>/edit">Edit</a>
-      <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-      </form>
-    </li>
-  <% }) %>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Book List</h1>
+    <a href="/books/new">Add New Book</a>
+    <ul>
+        <% books.forEach(book => { %>
+            <li>
+                <a href="/books/<%= book._id %>"><%= book.title %></a>
+                <a href="/books/<%= book._id %>/edit">Edit</a>
+                <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
+
